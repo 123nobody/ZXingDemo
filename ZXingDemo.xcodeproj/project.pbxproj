@@ -16,9 +16,42 @@
 		B60A2E841702942F0041DEE4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B60A2E831702942F0041DEE4 /* Default.png */; };
 		B60A2E86170294300041DEE4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B60A2E85170294300041DEE4 /* Default@2x.png */; };
 		B60A2E88170294300041DEE4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B60A2E87170294300041DEE4 /* Default-568h@2x.png */; };
-		B60A2E8B170294300041DEE4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60A2E8A170294300041DEE4 /* ViewController.m */; };
+		B60A2E8B170294300041DEE4 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B60A2E8A170294300041DEE4 /* ViewController.mm */; };
 		B60A2E8E170294300041DEE4 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60A2E8C170294300041DEE4 /* ViewController.xib */; };
+		B60A2E9F1702949F0041DEE4 /* libZXingWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B60A2E9A170294790041DEE4 /* libZXingWidget.a */; };
+		B60A2EA1170294A80041DEE4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60A2EA0170294A80041DEE4 /* AVFoundation.framework */; };
+		B60A2EA3170294C70041DEE4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60A2EA2170294C70041DEE4 /* AudioToolbox.framework */; };
+		B60A2EA5170294CE0041DEE4 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60A2EA4170294CE0041DEE4 /* CoreVideo.framework */; };
+		B60A2EA7170294D50041DEE4 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60A2EA6170294D50041DEE4 /* CoreMedia.framework */; };
+		B60A2EA9170294DB0041DEE4 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B60A2EA8170294DB0041DEE4 /* libiconv.dylib */; };
+		B60A2EAB170294E00041DEE4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60A2EAA170294E00041DEE4 /* AddressBook.framework */; };
+		B60A2EAD170294E50041DEE4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60A2EAC170294E50041DEE4 /* AddressBookUI.framework */; };
+		B60A2EB41702E7690041DEE4 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60A2EB31702E7690041DEE4 /* CustomViewController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B60A2E99170294790041DEE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B60A2E94170294780041DEE4 /* ZXingWidget.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = ZXingWidget;
+		};
+		B60A2E9B170294790041DEE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B60A2E94170294780041DEE4 /* ZXingWidget.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D60398D13DF7CAD006F4B51;
+			remoteInfo = ZXingTests;
+		};
+		B60A2E9D170294970041DEE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B60A2E94170294780041DEE4 /* ZXingWidget.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = ZXingWidget;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B60A2E6E1702942F0041DEE4 /* ZXingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZXingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,8 +68,18 @@
 		B60A2E85170294300041DEE4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B60A2E87170294300041DEE4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B60A2E89170294300041DEE4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B60A2E8A170294300041DEE4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B60A2E8A170294300041DEE4 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		B60A2E8D170294300041DEE4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		B60A2E94170294780041DEE4 /* ZXingWidget.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZXingWidget.xcodeproj; path = zxing/iphone/ZXingWidget/ZXingWidget.xcodeproj; sourceTree = SOURCE_ROOT; };
+		B60A2EA0170294A80041DEE4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B60A2EA2170294C70041DEE4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B60A2EA4170294CE0041DEE4 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		B60A2EA6170294D50041DEE4 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		B60A2EA8170294DB0041DEE4 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		B60A2EAA170294E00041DEE4 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		B60A2EAC170294E50041DEE4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		B60A2EB21702E7690041DEE4 /* CustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
+		B60A2EB31702E7690041DEE4 /* CustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +87,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B60A2EAD170294E50041DEE4 /* AddressBookUI.framework in Frameworks */,
+				B60A2EAB170294E00041DEE4 /* AddressBook.framework in Frameworks */,
+				B60A2EA9170294DB0041DEE4 /* libiconv.dylib in Frameworks */,
+				B60A2EA7170294D50041DEE4 /* CoreMedia.framework in Frameworks */,
+				B60A2EA5170294CE0041DEE4 /* CoreVideo.framework in Frameworks */,
+				B60A2EA3170294C70041DEE4 /* AudioToolbox.framework in Frameworks */,
+				B60A2EA1170294A80041DEE4 /* AVFoundation.framework in Frameworks */,
+				B60A2E9F1702949F0041DEE4 /* libZXingWidget.a in Frameworks */,
 				B60A2E721702942F0041DEE4 /* UIKit.framework in Frameworks */,
 				B60A2E741702942F0041DEE4 /* Foundation.framework in Frameworks */,
 				B60A2E761702942F0041DEE4 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +124,13 @@
 		B60A2E701702942F0041DEE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B60A2EAC170294E50041DEE4 /* AddressBookUI.framework */,
+				B60A2EAA170294E00041DEE4 /* AddressBook.framework */,
+				B60A2EA8170294DB0041DEE4 /* libiconv.dylib */,
+				B60A2EA6170294D50041DEE4 /* CoreMedia.framework */,
+				B60A2EA4170294CE0041DEE4 /* CoreVideo.framework */,
+				B60A2EA2170294C70041DEE4 /* AudioToolbox.framework */,
+				B60A2EA0170294A80041DEE4 /* AVFoundation.framework */,
 				B60A2E711702942F0041DEE4 /* UIKit.framework */,
 				B60A2E731702942F0041DEE4 /* Foundation.framework */,
 				B60A2E751702942F0041DEE4 /* CoreGraphics.framework */,
@@ -83,10 +141,13 @@
 		B60A2E771702942F0041DEE4 /* ZXingDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B60A2E94170294780041DEE4 /* ZXingWidget.xcodeproj */,
 				B60A2E801702942F0041DEE4 /* AppDelegate.h */,
 				B60A2E811702942F0041DEE4 /* AppDelegate.m */,
+				B60A2EB21702E7690041DEE4 /* CustomViewController.h */,
+				B60A2EB31702E7690041DEE4 /* CustomViewController.m */,
 				B60A2E89170294300041DEE4 /* ViewController.h */,
-				B60A2E8A170294300041DEE4 /* ViewController.m */,
+				B60A2E8A170294300041DEE4 /* ViewController.mm */,
 				B60A2E8C170294300041DEE4 /* ViewController.xib */,
 				B60A2E781702942F0041DEE4 /* Supporting Files */,
 			);
@@ -107,6 +168,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B60A2E95170294780041DEE4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B60A2E9A170294790041DEE4 /* libZXingWidget.a */,
+				B60A2E9C170294790041DEE4 /* ZXingTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -121,6 +191,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B60A2E9E170294970041DEE4 /* PBXTargetDependency */,
 			);
 			name = ZXingDemo;
 			productName = ZXingDemo;
@@ -146,12 +217,35 @@
 			mainGroup = B60A2E651702942F0041DEE4;
 			productRefGroup = B60A2E6F1702942F0041DEE4 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B60A2E95170294780041DEE4 /* Products */;
+					ProjectRef = B60A2E94170294780041DEE4 /* ZXingWidget.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B60A2E6D1702942F0041DEE4 /* ZXingDemo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B60A2E9A170294790041DEE4 /* libZXingWidget.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libZXingWidget.a;
+			remoteRef = B60A2E99170294790041DEE4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B60A2E9C170294790041DEE4 /* ZXingTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZXingTests.octest;
+			remoteRef = B60A2E9B170294790041DEE4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B60A2E6C1702942F0041DEE4 /* Resources */ = {
@@ -175,11 +269,20 @@
 			files = (
 				B60A2E7E1702942F0041DEE4 /* main.m in Sources */,
 				B60A2E821702942F0041DEE4 /* AppDelegate.m in Sources */,
-				B60A2E8B170294300041DEE4 /* ViewController.m in Sources */,
+				B60A2E8B170294300041DEE4 /* ViewController.mm in Sources */,
+				B60A2EB41702E7690041DEE4 /* CustomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B60A2E9E170294970041DEE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZXingWidget;
+			targetProxy = B60A2E9D170294970041DEE4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B60A2E7A1702942F0041DEE4 /* InfoPlist.strings */ = {
@@ -227,7 +330,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -260,9 +363,18 @@
 		B60A2E92170294300041DEE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZXingDemo/ZXingDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"./zxing/iphone/ZXingWidget/Classes/**",
+					./zxing/cpp/core/src,
+				);
 				INFOPLIST_FILE = "ZXingDemo/ZXingDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -271,9 +383,17 @@
 		B60A2E93170294300041DEE4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZXingDemo/ZXingDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"./zxing/iphone/ZXingWidget/Classes/**",
+					./zxing/cpp/core/src,
+				);
 				INFOPLIST_FILE = "ZXingDemo/ZXingDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -298,6 +418,7 @@
 				B60A2E93170294300041DEE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
