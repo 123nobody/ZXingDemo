@@ -11,8 +11,8 @@
 #import "CustomViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController <ZXingDelegate, CustomViewControllerDelegate, DecoderDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface ViewController : UIViewController <ZXingDelegate, CustomViewControllerDelegate, DecoderDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate>
 
-@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UITextView *textView;
 
 @end

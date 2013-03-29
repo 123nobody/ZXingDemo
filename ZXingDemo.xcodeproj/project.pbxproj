@@ -28,6 +28,7 @@
 		B60A2EAD170294E50041DEE4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60A2EAC170294E50041DEE4 /* AddressBookUI.framework */; };
 		B60A2EB41702E7690041DEE4 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60A2EB31702E7690041DEE4 /* CustomViewController.m */; };
 		B65615371703DFB5009BEB75 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65615361703DFB5009BEB75 /* AssetsLibrary.framework */; };
+		B69EB500170570B300F87022 /* libqrencoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B69EB4FB1705708C00F87022 /* libqrencoder.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = ZXingWidget;
+		};
+		B69EB4FA1705708C00F87022 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B69EB4F51705708C00F87022 /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9672D35713BD662F0002B0E2;
+			remoteInfo = qrencoder;
+		};
+		B69EB4FC1705708C00F87022 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B69EB4F51705708C00F87022 /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9621844115431DBA00447877;
+			remoteInfo = QRCodeEncoderDemo;
+		};
+		B69EB4FE170570AD00F87022 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B69EB4F51705708C00F87022 /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9672D35613BD662F0002B0E2;
+			remoteInfo = qrencoder;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -82,6 +104,7 @@
 		B60A2EB21702E7690041DEE4 /* CustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
 		B60A2EB31702E7690041DEE4 /* CustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; };
 		B65615361703DFB5009BEB75 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		B69EB4F51705708C00F87022 /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = QRCodeEncoderObjectiveCAtGithub.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69EB500170570B300F87022 /* libqrencoder.a in Frameworks */,
 				B65615371703DFB5009BEB75 /* AssetsLibrary.framework in Frameworks */,
 				B60A2EAD170294E50041DEE4 /* AddressBookUI.framework in Frameworks */,
 				B60A2EAB170294E00041DEE4 /* AddressBook.framework in Frameworks */,
@@ -145,6 +169,7 @@
 		B60A2E771702942F0041DEE4 /* ZXingDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B69EB4C917056DAD00F87022 /* ThirdParty */,
 				B60A2E94170294780041DEE4 /* ZXingWidget.xcodeproj */,
 				B60A2E801702942F0041DEE4 /* AppDelegate.h */,
 				B60A2E811702942F0041DEE4 /* AppDelegate.m */,
@@ -181,6 +206,31 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B69EB4C917056DAD00F87022 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				B69EB4CA17056DAD00F87022 /* QRCodeEncoder */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		B69EB4CA17056DAD00F87022 /* QRCodeEncoder */ = {
+			isa = PBXGroup;
+			children = (
+				B69EB4F51705708C00F87022 /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */,
+			);
+			path = QRCodeEncoder;
+			sourceTree = "<group>";
+		};
+		B69EB4F61705708C00F87022 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B69EB4FB1705708C00F87022 /* libqrencoder.a */,
+				B69EB4FD1705708C00F87022 /* QRCodeEncoderDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,6 +245,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B69EB4FF170570AD00F87022 /* PBXTargetDependency */,
 				B60A2E9E170294970041DEE4 /* PBXTargetDependency */,
 			);
 			name = ZXingDemo;
@@ -223,6 +274,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = B69EB4F61705708C00F87022 /* Products */;
+					ProjectRef = B69EB4F51705708C00F87022 /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */;
+				},
+				{
 					ProductGroup = B60A2E95170294780041DEE4 /* Products */;
 					ProjectRef = B60A2E94170294780041DEE4 /* ZXingWidget.xcodeproj */;
 				},
@@ -247,6 +302,20 @@
 			fileType = wrapper.cfbundle;
 			path = ZXingTests.octest;
 			remoteRef = B60A2E9B170294790041DEE4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B69EB4FB1705708C00F87022 /* libqrencoder.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libqrencoder.a;
+			remoteRef = B69EB4FA1705708C00F87022 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B69EB4FD1705708C00F87022 /* QRCodeEncoderDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = QRCodeEncoderDemo.app;
+			remoteRef = B69EB4FC1705708C00F87022 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -285,6 +354,11 @@
 			isa = PBXTargetDependency;
 			name = ZXingWidget;
 			targetProxy = B60A2E9D170294970041DEE4 /* PBXContainerItemProxy */;
+		};
+		B69EB4FF170570AD00F87022 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = qrencoder;
+			targetProxy = B69EB4FE170570AD00F87022 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -375,6 +449,7 @@
 				HEADER_SEARCH_PATHS = (
 					"./zxing/iphone/ZXingWidget/Classes/**",
 					./zxing/cpp/core/src,
+					./ZXingDemo/ThirdParty/QRCodeEncoder/QRCodeEncoderObjectiveCAtGithub,
 				);
 				INFOPLIST_FILE = "ZXingDemo/ZXingDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
@@ -395,6 +470,7 @@
 				HEADER_SEARCH_PATHS = (
 					"./zxing/iphone/ZXingWidget/Classes/**",
 					./zxing/cpp/core/src,
+					./ZXingDemo/ThirdParty/QRCodeEncoder/QRCodeEncoderObjectiveCAtGithub,
 				);
 				INFOPLIST_FILE = "ZXingDemo/ZXingDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
