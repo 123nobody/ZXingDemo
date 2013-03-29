@@ -64,9 +64,15 @@
     }
 }
 
-- (void)initCapture {
+- (void)initCapture
+{
+    self.captureSession = [[AVCaptureSession alloc] init];
+    
     AVCaptureDevice* inputDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    
     AVCaptureDeviceInput *captureInput = [AVCaptureDeviceInput deviceInputWithDevice:inputDevice error:nil];
+    [self.captureSession addInput:captureInput];
+    
     AVCaptureVideoDataOutput *captureOutput = [[AVCaptureVideoDataOutput alloc] init];
     captureOutput.alwaysDiscardsLateVideoFrames = YES;
     [captureOutput setSampleBufferDelegate:self queue:dispatch_get_main_queue()];
@@ -74,7 +80,7 @@
     NSNumber* value = [NSNumber numberWithUnsignedInt:kCVPixelFormatType_32BGRA];
     NSDictionary *videoSettings = [NSDictionary dictionaryWithObject:value forKey:key];
     [captureOutput setVideoSettings:videoSettings];
-    self.captureSession = [[AVCaptureSession alloc] init];
+    [self.captureSession addOutput:captureOutput];
     
     NSString* preset = 0;
     if (NSClassFromString(@"NSOrderedSet") && // Proxy for "is this iOS 5" ...
@@ -89,9 +95,6 @@
         preset = AVCaptureSessionPresetMedium;
     }
     self.captureSession.sessionPreset = preset;
-    
-    [self.captureSession addInput:captureInput];
-    [self.captureSession addOutput:captureOutput];
     
     if (!self.captureVideoPreviewLayer) {
         self.captureVideoPreviewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.captureSession];

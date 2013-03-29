@@ -15,6 +15,9 @@
 
 #import "AVCamViewController.h"
 
+//生成二维码
+#import "QREncoder.h"
+
 @interface ViewController ()
 
 @end
@@ -25,28 +28,42 @@
 {
     [super viewDidLoad];
     
+    _textView = [[UITextView alloc] initWithFrame:CGRectMake(10.f, 10.f, 300.f, 200.f)];
+    self.textView.delegate = self;
+    self.textView.returnKeyType = UIReturnKeyDone;
+    self.textView.font = [UIFont systemFontOfSize:14.f];
+    [self.view addSubview:self.textView];
+    
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button1 setTitle:@"Scan - 简单" forState:UIControlStateNormal];
-    [button1 setFrame:CGRectMake(60.f, 240.f, 200.f, 50.f)];
+    [button1 setTitle:@"ZXing扫描器" forState:UIControlStateNormal];
+    [button1 setFrame:CGRectMake(10.f, 240.f, 140.f, 50.f)];
     [button1 addTarget:self action:@selector(pressButton1:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button1];
     
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button2 setTitle:@"Scan - 自定义" forState:UIControlStateNormal];
-    [button2 setFrame:CGRectMake(60.f, 310.f, 200.f, 50.f)];
+    [button2 setTitle:@"自定义扫描器" forState:UIControlStateNormal];
+    [button2 setFrame:CGRectMake(170.f, 240.f, 140.f, 50.f)];
     [button2 addTarget:self action:@selector(pressButton2:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
     
     UIButton *button3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button3 setTitle:@"Scan - 相册" forState:UIControlStateNormal];
-    [button3 setFrame:CGRectMake(60.f, 380.f, 200.f, 50.f)];
+    [button3 setTitle:@"从相册选择" forState:UIControlStateNormal];
+    [button3 setFrame:CGRectMake(10.f, 310.f, 140.f, 50.f)];
     [button3 addTarget:self action:@selector(pressButton3:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button3];
     
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(10.f, 20.f, 300.f, 200.f)];
-    self.label.numberOfLines = 0;
-    self.label.lineBreakMode = NSLineBreakByWordWrapping;
-    [self.view addSubview:self.label];
+    UIButton *button4 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button4 setTitle:@"生成二维码" forState:UIControlStateNormal];
+    [button4 setFrame:CGRectMake(170.f, 310.f, 140.f, 50.f)];
+    [button4 addTarget:self action:@selector(pressButton4:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button4];
+    
+    UIButton *transparentButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [transparentButton addTarget:self action:@selector(prassTransparentButton:) forControlEvents:UIControlEventTouchUpInside];
+    [transparentButton setFrame:self.view.bounds];
+    transparentButton.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:transparentButton];
+    [self.view sendSubviewToBack:transparentButton];
 }
 
 - (void)pressButton1:(UIButton *)button
@@ -63,7 +80,6 @@
 {
     CustomViewController *vc = [[CustomViewController alloc] init];
     vc.delegate = self;
-//    AVCamViewController *vc = [[AVCamViewController alloc] init];
     [self presentViewController:vc animated:YES completion:^{}];
 }
 
@@ -74,6 +90,43 @@
     picker.delegate = self;
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:picker animated:YES completion:^{}];
+}
+
+- (void)pressButton4:(UIButton *)button
+{
+    int qrcodeImageDimension = 250;
+    
+    //the string can be very long
+    NSString *aVeryLongURL = self.textView.text;
+    
+    //first encode the string into a matrix of bools, TRUE for black dot and FALSE for white. Let the encoder decide the error correction level and version
+    DataMatrix* qrMatrix = [QREncoder encodeWithECLevel:QR_ECLEVEL_AUTO version:QR_VERSION_AUTO string:aVeryLongURL];
+    
+    //then render the matrix
+    UIImage* qrcodeImage = [QREncoder renderDataMatrix:qrMatrix imageDimension:qrcodeImageDimension];
+    
+    //put the image into the view
+    UIImageView* qrcodeImageView = [[UIImageView alloc] initWithImage:qrcodeImage];
+    
+    UIViewController *vc = [[UIViewController alloc] init];
+    vc.view.backgroundColor = [UIColor whiteColor];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(pressBackButton:)];
+    [vc.navigationItem setRightBarButtonItem:rightButton];
+    [vc.view addSubview:qrcodeImageView];
+    [qrcodeImageView setCenter:vc.view.center];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:^{}];
+}
+
+- (void)pressBackButton:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:^{}];
+}
+
+- (void)prassTransparentButton:(UIButton *)button
+{
+    [self.textView resignFirstResponder];
 }
 
 - (void)decodeImage:(UIImage *)image
@@ -91,7 +144,7 @@
 - (void)outPutResult:(NSString *)result
 {
     NSLog(@"result:%@", result);
-    self.label.text = result;
+    self.textView.text = result;
 }
 
 #pragma mark - DecoderDelegate
@@ -137,6 +190,17 @@
 {
     UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
     [self dismissViewControllerAnimated:YES completion:^{[self decodeImage:image];}];    
+}
+
+#pragma mark - UITextViewDelegate
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
 }
 
 #pragma mark -
