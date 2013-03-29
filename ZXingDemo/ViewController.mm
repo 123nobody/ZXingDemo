@@ -13,6 +13,8 @@
 #import <Decoder.h>
 #import <TwoDDecoderResult.h>
 
+#import "AVCamViewController.h"
+
 @interface ViewController ()
 
 @end
@@ -59,7 +61,10 @@
 
 - (void)pressButton2:(UIButton *)button
 {
-    
+    CustomViewController *vc = [[CustomViewController alloc] init];
+    vc.delegate = self;
+//    AVCamViewController *vc = [[AVCamViewController alloc] init];
+    [self presentViewController:vc animated:YES completion:^{}];
 }
 
 - (void)pressButton3:(UIButton *)button
@@ -101,18 +106,29 @@
     [self outPutResult:[NSString stringWithFormat:@"解码失败！"]];
 }
 
+#pragma mark - CustomViewControllerDelegate
+
+- (void)customViewController:(CustomViewController *)controller didScanResult:(NSString *)result
+{
+    [self dismissViewControllerAnimated:YES completion:^{[self outPutResult:result];}];
+    
+}
+
+- (void)customViewControllerDidCancel:(CustomViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:^{NSLog(@"取消扫描！退出扫描器！");}];    
+}
+
 #pragma mark - ZXingDelegate
 
 - (void)zxingController:(ZXingWidgetController *)controller didScanResult:(NSString *)result
 {
-    [self outPutResult:result];
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    [self dismissViewControllerAnimated:YES completion:^{[self outPutResult:result];}];    
 }
 
 - (void)zxingControllerDidCancel:(ZXingWidgetController *)controller
 {
-    NSLog(@"cancel!");
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    [self dismissViewControllerAnimated:YES completion:^{NSLog(@"cancel!");}];
 }
 
 #pragma mark - UIImagePickerControllerDelegate
@@ -120,15 +136,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info objectForKey:@"UIImagePickerControllerEditedImage"];
-    [self decodeImage:image];
-    [self dismissViewControllerAnimated:YES completion:^{}];
-}
-
-#pragma mark - AVCaptureVideoDataOutputSampleBufferDelegate
-
-- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
-{
-    NSLog(@"output!");
+    [self dismissViewControllerAnimated:YES completion:^{[self decodeImage:image];}];    
 }
 
 #pragma mark -

@@ -27,6 +27,7 @@
 		B60A2EAB170294E00041DEE4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60A2EAA170294E00041DEE4 /* AddressBook.framework */; };
 		B60A2EAD170294E50041DEE4 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60A2EAC170294E50041DEE4 /* AddressBookUI.framework */; };
 		B60A2EB41702E7690041DEE4 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60A2EB31702E7690041DEE4 /* CustomViewController.m */; };
+		B65615371703DFB5009BEB75 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65615361703DFB5009BEB75 /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		B60A2EAC170294E50041DEE4 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		B60A2EB21702E7690041DEE4 /* CustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
 		B60A2EB31702E7690041DEE4 /* CustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; };
+		B65615361703DFB5009BEB75 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B65615371703DFB5009BEB75 /* AssetsLibrary.framework in Frameworks */,
 				B60A2EAD170294E50041DEE4 /* AddressBookUI.framework in Frameworks */,
 				B60A2EAB170294E00041DEE4 /* AddressBook.framework in Frameworks */,
 				B60A2EA9170294DB0041DEE4 /* libiconv.dylib in Frameworks */,
@@ -124,6 +127,7 @@
 		B60A2E701702942F0041DEE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B65615361703DFB5009BEB75 /* AssetsLibrary.framework */,
 				B60A2EAC170294E50041DEE4 /* AddressBookUI.framework */,
 				B60A2EAA170294E00041DEE4 /* AddressBook.framework */,
 				B60A2EA8170294DB0041DEE4 /* libiconv.dylib */,
@@ -308,8 +312,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -339,8 +343,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;

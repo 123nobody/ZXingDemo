@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <ZXingWidgetController.h>
+#import "CustomViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController <ZXingDelegate, DecoderDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface ViewController : UIViewController <ZXingDelegate, CustomViewControllerDelegate, DecoderDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UILabel *label;
 

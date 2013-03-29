@@ -332,7 +332,7 @@ static bool isIPad() {
   AVCaptureVideoDataOutput *captureOutput = [[AVCaptureVideoDataOutput alloc] init]; 
   captureOutput.alwaysDiscardsLateVideoFrames = YES; 
   [captureOutput setSampleBufferDelegate:self queue:dispatch_get_main_queue()];
-  NSString* key = (NSString*)kCVPixelBufferPixelFormatTypeKey; 
+  NSString* key = (NSString*)kCVPixelBufferPixelFormatTypeKey;
   NSNumber* value = [NSNumber numberWithUnsignedInt:kCVPixelFormatType_32BGRA]; 
   NSDictionary* videoSettings = [NSDictionary dictionaryWithObject:value forKey:key]; 
   [captureOutput setVideoSettings:videoSettings]; 
@@ -412,7 +412,7 @@ static bool isIPad() {
 - (void)captureOutput:(AVCaptureOutput *)captureOutput 
 didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer 
        fromConnection:(AVCaptureConnection *)connection 
-{ 
+{
   if (!decoding) {
     return;
   }
